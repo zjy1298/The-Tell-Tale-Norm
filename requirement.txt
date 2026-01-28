@@ -1,0 +1,14 @@
+vllm==0.8.5
+torch==2.6.0
+transformers==4.52.4
+tokenizers==0.21.1
+accelerate==1.7.0
+sentencepiece
+tiktoken>=0.7.0
+numpy>=1.26.0
+datasets>=2.19.0
+evaluate>=0.4.0
+einops>=0.7.0
+flash-attn>=2.6.3
+ray>=2.45.0
+aiohttp>=3.9.0
