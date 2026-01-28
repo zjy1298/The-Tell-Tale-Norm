@@ -10,7 +10,7 @@ We demonstrate that the **ℓ² norm of hidden states** is a robust, intrinsic s
 
 ![Overview](overview.png)
 
-,,,
+```
 
 ## 🚀 Key Features
 
@@ -22,11 +22,11 @@ We demonstrate that the **ℓ² norm of hidden states** is a robust, intrinsic s
   2. **Endogenous Reasoning State Steering (ERSS)**: Inject historical high-norm states to amplify reasoning.
   3. **ℓ²-guided Response Selection (LRS)**: Select the best output based on internal reasoning intensity.
 
-,,,
+```
 
 ## 📦 Repository Structure
 
-,,,
+```
 bash
 .
 ├── environment.yml          # Conda environment for reproducibility
@@ -38,28 +38,28 @@ bash
 │   └── rerank/              # LRS: ℓ²-guided Response Selection
 └── lm_eval_adapters/        # Adapters for lm-evaluation-harness
     └── vllm_loop.py         # Example: integrate ALRR into evaluation
-,,,
+```
 
-,,,
+```
 
 ## ⚡ Quick Start
 
 ### 1. Set up the environment
-,,,
+```
 bash
 conda env create -f environment.yml
 conda activate telltale-norm
-,,,
+```
 
 ### 2. Run evaluation with ℓ²-guided recursion
-,,,
+```
 bash
 VLLM_PATCH=loop \
 PATCHED_LAYERS="21,22,23,24,25,26" \
 PATCHED_TAU_JSON='{"21":1300,"22":1550,"23":1850,"24":2300,"25":2800,"26":3600}' \
 python -m lm_eval --model vllm --model_args pretrained=your/model/path \
                   --tasks gsm8k,aime24 --batch_size auto
-,,,
+```
 
 > Replace `your/model/path` with your local or Hugging Face model path.
 
@@ -69,7 +69,7 @@ python -m lm_eval --model vllm --model_args pretrained=your/model/path \
 
 All methods are controlled via environment variables—no code changes needed!
 
-,,,
+```
 
 ## 📊 Results
 
@@ -82,7 +82,7 @@ Our methods consistently improve performance across models and benchmarks:
 
 > Full results in the paper.
 
-,,,
+```
 
 ## 🤝 How It Works
 
@@ -95,13 +95,13 @@ Because the ℓ² norm is **intrinsic** to the model’s latent geometry, our ap
 - **Efficient**: Adds minimal overhead (<5% latency).
 - **Effective**: Works even on small models (e.g., Qwen3-1.7B).
 
-,,,
+```
 
 ## 📜 Citation
 
 If you find this work useful, please cite our paper:
 
-,,,
+```
 bibtex
 @article{anonymous2026telltalenorm,
   title={The Tell-Tale Norm: ℓ² Magnitude as a Signal for Reasoning Dynamics in Large Language Models},
@@ -109,9 +109,9 @@ bibtex
   journal={International Conference on Machine Learning (ICML) Submission},
   year={2026}
 }
-,,,
+```
 
-,,,
+```
 
 ## 🛠️ Disclaimer
 
