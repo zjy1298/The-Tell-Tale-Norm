@@ -8,7 +8,7 @@ This repository contains the official implementation of **"The Tell-Tale Norm"**
 
 We demonstrate that the **ℓ² norm of hidden states** is a robust, intrinsic signal of reasoning intensity. Building on this insight, we introduce three plug-and-play techniques that significantly boost reasoning performance across diverse models and benchmarks—**by an average of 8.33%**.
 
-![Overview](overview.png)
+![Overview](overview.pdf)
 
 ```
 
