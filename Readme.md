@@ -11,7 +11,7 @@
 
 > **Reasoning leaves a trace. We found it in the ℓ² norm.**
 
-![Poster](poster.png)
+![Poster](ICML 2026 Poster - The Tell-Tale Norm.png)
 
 ## 🚀 Introduction
 
