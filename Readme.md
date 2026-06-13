@@ -35,13 +35,14 @@ Without any fine-tuning or extra data, our methods yield an **average gain of 4.
 ## ⚡ Quick Start
 
 ### 1. Set up the environment
-
+```bash
 conda create -n telltale-norm
 pip install -r requirement.txt
 conda activate telltale-norm
+```
 
 ### 2. Run evaluation with ℓ²-guided recursion
-
+```bash
 VLLM_PATCH=loop \
 PATCHED_LAYERS="21,22,23,24,25,26" \
 PATCHED_TAU_JSON='{"21":1300,"22":1550,"23":1850,"24":2300,"25":2800,"26":3600}' \
@@ -49,11 +50,10 @@ python -m lm_eval --model vllm --model_args pretrained=your/model/path \
                   --tasks gsm8k,aime24 --batch_size auto
 
 > Replace your/model/path with your local or Hugging Face model path.
-
+```
 ### 3. Try other methods
-
-- For Response Selection (LRS): set VLLM_PATCH=rerank
-- For State Steering (ERSS): set VLLM_PATCH=ttts
+- For Response Selection (LRS): `set VLLM_PATCH=rerank`
+- For State Steering (ERSS): `set VLLM_PATCH=ttts`
 
 All methods are elegantly controlled via environment variables—no code changes needed!
 
@@ -68,7 +68,7 @@ Because the ℓ² norm is intrinsic to the model, our approach adds minimal over
 ## 📜 Citation
 
 If you find this work useful, please cite our ICML 2026 Spotlight paper:
-
+```bibtex
 @inproceedings{zhang2026telltalenorm,
   title={The Tell-Tale Norm: $\ell_2$ Magnitude as a Signal for Reasoning Dynamics in Large Language Models},
   author={Zhang, Jinyang and Ding, Hongxin and Fang, Yue and Liao, Weibin and Ye, Muyang and Zhao, Junfeng and Wang, Yasha},
@@ -76,6 +76,7 @@ If you find this work useful, please cite our ICML 2026 Spotlight paper:
   year={2026},
   note={Spotlight}
 }
+```
 
 ## 🙏 Acknowledgements
 
